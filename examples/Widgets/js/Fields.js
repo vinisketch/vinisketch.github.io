@@ -13,7 +13,8 @@ function initFieldsPanel () {
   view.add (label);
 
   var combo = new vs.ui.ComboBox ({
-    data: ['value 1', 'value 2', 'value 3', 'value 4']
+    data: ['value 1', 'value 2', 'value 3', 'value 4'],
+    size: [150, 43]
   }).init ();
   view.add (combo);
 
@@ -40,10 +41,18 @@ function initFieldsPanel () {
   view.add (switch1);
 
   var switch2 = new vs.ui.Switch ({
-    textOn : 'I',
-    textOff : 'O'
+    textOn : 'ON',
+    textOff : 'OFF',
+    size: [80, 28]
   }).init ();
   view.add (switch2);
+
+  var switch3 = new vs.ui.Switch ({
+    textOn : 'I',
+    textOff : 'O',
+    size: [80, 28]
+  }).init ();
+  view.add (switch3);
 
   return view;
 }

@@ -66,116 +66,47 @@ var MyView = vs.core.createClass ({
   initComponent : function ()
   {
     this._super ();
-    
-    vs.addPointerListener (this.view, vs.POINTER_START, this);
-    vs.addPointerListener (this.view, vs.GESTURE_START, this);
-    this.__pointers = {};
-    vs.util.setElementTransformOrigin (this.view, '0px 0px');
+
+    this.addPointerRecognizer (new vs.ui.DragRecognizer (this));
+    this.addPointerRecognizer (new vs.ui.PinchRecognizer (this));
+    this.addPointerRecognizer (new vs.ui.RotationRecognizer (this));
   },
   
-  /**
-   * @private
-   * @function
-   */
-  handleEvent : function (e)
-  {
-    switch (e.type)
-    {
-      case vs.POINTER_START:
-        this.pointerStart (e);
-        break;
-
-      case vs.POINTER_MOVE:
-        this.pointerMove (e);
-        break;
-
-      case vs.POINTER_END:
-        this.pointerEnd (e);
-        break;
-
-      case vs.GESTURE_START:
-        this.gestureStart (e);
-        break;
-        
-      case vs.GESTURE_CHANGE:
-        this.gestureChange (e);
-        break;
-        
-      case vs.GESTURE_END:
-        this.gestureEnd (e);
-        break;
-     }
-    return false;
-  },
-  
-  pointerStart: function (e)
-  {
-    if (e.nbPointers === 1 && !this._binding_)
-    {
-      vs.addPointerListener (document, vs.POINTER_MOVE, this);
-      vs.addPointerListener (document, vs.POINTER_END, this);
-      this._binding_ = true;
-      
-      var pointer = e.targetPointerList [0];
-      this._start_pos = [pointer.pageX, pointer.pageY];
-      this.setNewTransformOrigin ({x: 0, y: 0});
-    }
-    else if (this._binding)
-    {
-      vs.removePointerListener (document, vs.POINTER_MOVE, this);
-      vs.removePointerListener (document, vs.POINTER_END, this);
-      this._binding_ = false;
-    }
-  },
-    
-  pointerMove: function (e)
-  {
-    if (e.nbPointers !== 1) return;
-    
-    var pointer = e.targetPointerList [0];
-    
-    this.translation =
-      [pointer.pageX - this._start_pos [0], pointer.pageY - this._start_pos [1]];
-
-    this.__update_debug (e.pointerList, e.changedPointerList, false);
+  didPinchChange : function (scale, e) {
+    this.scaling = scale;
+    //this.__update_debug (e.pointerList, e.changedPointerList, false);
   },
 
-  pointerEnd: function (e)
-  {
-    if (this._binding_)
-    {
-      vs.removePointerListener (document, vs.POINTER_MOVE, this);
-      vs.removePointerListener (document, vs.POINTER_END, this);
-      this._binding_ = false;
-    }
-
-    this.__update_debug (null, null, true);
+  didPinchStart : function (scale, e) {
+    this.flushTransformStack ();
   },
 
-  gestureStart : function (e)
-  {
-    vs.addPointerListener (document, vs.GESTURE_CHANGE, this);
-    vs.addPointerListener (document, vs.GESTURE_END, this);
-    this.setNewTransformOrigin (e.centroid);
-
-    this.__update_debug (e.pointerList, e.changedPointerList, false, e.rotation);
+  didPinchEnd : function (scale, e) {
+    this.flushTransformStack ();
   },
 
-  gestureChange : function (e)
-  {
-    this.__update_debug (e.pointerList, e.changedPointerList, false, e.rotation);
-
-    this.scaling = e.scale;
-    this.rotation = e.rotation;
-    this.translation = e.translation;
+  didRotationChange : function (rotation, e) {
+    this.rotation = rotation;
+    //this.__update_debug (e.pointerList, e.changedPointerList, false, rotation);
   },
 
-  gestureEnd : function (e)
-  {
-    this.__update_debug (null, null, true);
-    vs.removePointerListener (document, vs.GESTURE_CHANGE, this);
+  didDrag : function (drag_info, e) {
+    this.translation = [drag_info.dx, drag_info.dy];
+    //this.__update_debug (e.pointerList, e.changedPointerList, false);
   },
-    
+
+  didDragStart : function (e) {
+    // save drag translation
+    this.flushTransformStack ();
+    //this.__update_debug (null, null, true);
+  },
+
+  didDragEnd : function (e) {
+    // save drag translation
+    this.flushTransformStack ();
+    //this.__update_debug (null, null, true);
+  },
+     
   __update_debug : function (pointers, pointersToRemove, clear, angle)
   {
     // remove debug info
