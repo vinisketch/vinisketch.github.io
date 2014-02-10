@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  font-family: proxima-nova,'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 header > h1 {
@@ -54,18 +55,23 @@ h1, h2, h3, h4 {
 h1 {
   margin: 10px 0;
   line-height: 20px;
-  font-size:38.5px;
+  font-size:32.5px;
 }
 
 h1 small {
-  font-size:24.5px;
+  font-size:0.7em;
 }
 
 h2 {
   margin: 15px 0 15px 0;
   line-height: 20px;
-  font-size:28.5px;
+  font-size:25.5px;
 }
+
+h2 small {
+  font-size:0.7em;
+}
+
 
 h3 {
   margin: 10px 0;
@@ -90,4 +96,122 @@ ul {
 li {
   display: list-item;
   list-style-type: disc;
+}
+
+#head_intro {
+  max-width: none;
+  height: 400px;
+  background-color: #21242c;
+  position: relative;
+}
+
+#head_intro > section {
+  max-width: 980px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#head_intro h1 {
+  color: white;
+}
+
+#head_intro h2 {
+  color: white;
+  border: none;
+  font-size: 1.3em;
+  margin: 0px;
+  padding: 0px;
+}
+
+#example_tablet {
+  width: 400px;
+  top: 116px;
+  right: 114px;
+}
+
+#example_holo {
+  width: 150px;
+  top: 99px;
+  right: 114px;
+  opacity: 0.8;
+}
+
+#example_ios7 {
+  height: 130px;
+  top: 165px;
+  right: 334px;
+  opacity: 0.9;
+}
+
+#head_intro img {
+  -webkit-transform: rotate(19deg) skew(-18deg, -8deg) scale(1, 0.9);
+  position: absolute;
+}
+
+#intro_menu {
+  margin-top: 150px !important;
+}
+
+#intro_menu ul {
+  list-style: none;
+}
+
+#intro_menu ul > li {
+  background-color: #FF6B25;
+  margin: 15px 5px 0 0;
+  display: block;
+  width: 120px;
+  padding: 8px;
+  color: white;
+  text-align: center;
+  padding-right: 25px;
+}
+
+#intro_menu ul > li:active {
+  background-color: #a1a6a9;
+  color: rgba(255, 255, 255, 0.75);
+  outline: none;
+}
+
+#intro_menu ul > li:hover {
+  background-color: #cacfd2;
+  color: #ffffff;
+  outline: none;
+}
+
+#intro_menu ul > li a {
+  color: inherit;
+}
+
+#intro_menu ul > li i {
+  float: left;
+  font-size: 1.5em;
+}
+
+.intro-row {
+  margin: 10px 0 50px 0;
+  position: relative;
+}
+
+.intro-row::after {
+  position: absolute;
+  bottom: -30px;
+  content: " ";
+  border-bottom: 1px solid #888;
+  left: 20%;
+  right: 20%;
+}
+
+.intro-col {
+  width: 32%;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: content-box;
+}
+.intro-col h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.intro-col > p {
+  padding-right: 40px;
 }
