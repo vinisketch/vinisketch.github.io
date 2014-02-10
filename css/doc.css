@@ -196,15 +196,6 @@ li {
   position: relative;
 }
 
-.intro-row::after {
-  position: absolute;
-  bottom: -30px;
-  content: " ";
-  border-bottom: 1px solid #888;
-  left: 20%;
-  right: 20%;
-}
-
 .intro-col {
   width: 32%;
   display: inline-block;
@@ -218,3 +209,40 @@ li {
 .intro-col > p {
   padding-right: 40px;
 }
+
+.demo {
+  height: 600px;
+}
+
+#demo_theme {
+  width: 320px;
+  height: 570px;
+  border: 2px solid #444;
+  border-radius: 2px;
+  float: right;
+}
+
+#demo_theme_selector > li {
+  list-style: none;
+  background-color: #FF6B25;
+  margin: 15px 5px 0 0;
+  display: block;
+  width: 150px;
+  padding: 8px;
+  color: white;
+  text-align: center;
+}
+
+#demo_theme_selector> li:active {
+  background-color: #a1a6a9;
+  color: rgba(255, 255, 255, 0.75);
+  outline: none;
+}
+
+#demo_theme_selector > li:hover {
+  background-color: #cacfd2;
+  color: #ffffff;
+  outline: none;
+}
+
+
