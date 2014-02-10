@@ -30,10 +30,10 @@
               <a href="https://github.com/vinisketch/VSToolkit/zipball/master" class="link-active"><i class="fa fa-download"></i>&nbsp;&nbsp;<span>Download</span></a>
             </li>
             <li class="hidden-phone">
-              <a href="https://github.com/vinisketch/VSToolkit" class="link-active"><i class="fa fa-github"></i>&nbsp;&nbsp;<span>Git</span></a>
+              <a href="https://github.com/vinisketch/VSToolkit" target="_" class="link-active"><i class="fa fa-github"></i>&nbsp;&nbsp;<span>Git</span></a>
             </li>
             <li style="padding-right:8px;width:137px;">
-              <a href="http://www.vinisketch.com"><span>ViniSketch</span></a>
+              <a href="http://www.vinisketch.com" target="_"><span>ViniSketch</span></a>
             </li>
           </ul>
         
@@ -46,7 +46,7 @@
           <div class="intro-col">
             <h3>Components</h3>
             <p>
-              Framework driven by a component approach and based on Objects.
+              Framework driven by a component approach and based on objects.
             </p>
           </div>
           <div class="intro-col">
@@ -66,17 +66,46 @@
         </div>
       </section>
       
+      <hr />      
     </article>
     
     
     
-    <!--article>
+    <article class="demo hidden-phone">
+      <script>
+        function changeTheme (value) {
+          var frame = document.getElementById ("demo_theme");
+          theme_window = frame.contentWindow;
+          theme_window.postMessage ("changetheme#" + value, "*");
+        }
+      </script>
 
-      <iframe>
+      <iframe id="demo_theme"src="../examples/Themes/index.html"></iframe>
+
+      <h1>Customizable</h1>
+      <br />
+      <p>Create your own GUI Components and themes.</p>
+      <br />
+      <p>VSToolkit is provided with "Native like"  or original themes.</p>
+      <br />
+      <h3>Please test some available themes:</h3>
+
+      <ul id="demo_theme_selector">
+        <li onclick="changeTheme('flat')">Flat design</li>
+        <li onclick="changeTheme('pure')">Pure design</li>
+        <li onclick="changeTheme('holo_light')">Android Holo Light</li>
+        <li onclick="changeTheme('holo_dark')">Android Holo Dark</li>
+        <li onclick="changeTheme('ios7')">iOS 7</li>
+        <li onclick="changeTheme('ios')">Original iOS</li>
+        <li onclick="changeTheme('android')">Original Android</li>
+      </ul>
       
-      </iframe>
-      
-    </article-->
+      <br />
+      <br />
+      <br />
+      <br />
+      <hr />      
+    </article>
 
     
     <article>
