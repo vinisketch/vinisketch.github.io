@@ -145,6 +145,9 @@ li {
 
 #head_intro img {
   -webkit-transform: rotate(19deg) skew(-18deg, -8deg) scale(1, 0.9);
+  -ms-transform: rotate(19deg) skew(-18deg, -8deg) scale(1, 0.9);
+  -moz-transform: rotate(19deg) skew(-18deg, -8deg) scale(1, 0.9);
+  transform: rotate(19deg) skew(-18deg, -8deg) scale(1, 0.9);
   position: absolute;
 }
 
