@@ -16,9 +16,9 @@
 <body>
     <article id="head_intro">
       <section>
-        <h1>VS Toolkit<small>, the mobile HTML5 toolkit used with VSD</small></h1>
-        <h2>This toolkit was created to easily develop Hybrid Applications for mobile devices<br /><small>(for instance on top of 
-        <a href="http://www.phonegap.com">PhoneGap</a>)</small></h2>
+        <h1>VS Toolkit<small>, the mobile HTML5 toolkit used for VSD</small></h1>
+        <h2>This toolkit was created to easily develop Hybrid Applications for mobile devices<br />
+        <small>For WebApp others solutions exit</small></h2>
         <img id="example_tablet" src="../assets/example_tablet.png"></img>
         <img id="example_holo" src="../assets/example_holo.png"></img>
         <img id="example_ios7" src="../assets/example_ios7.png"></img>
@@ -66,6 +66,24 @@
         </div>
       </section>
       
+      <section>
+        <div class="intro-row">
+          <div class="intro-col double">
+            <h3>Scheduling</h3>
+            <p>
+              Events, Callbacks, and "Tasks" are executed into a scheduler, thats
+              make sure:
+              <ul>
+              <li>an event generated at 't' will never be managed before an
+              event generated earlier
+              <li>an asynchronous code will be execute ASAP (more quickly than a setTimeout (0))
+              <li>a Dataflow propagation is "atomic" [obviously according the limitations of JS]
+             <ul>
+            </p>
+          </div>
+        </div>
+      </section>
+  
       <hr />      
     </article>
     

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>VSToolkit @ Template</title>
+  <script type="text/javascript" src="http://dthevenin.github.com/javascripts/highlight.pack.js"></script> 
+  <link rel="stylesheet" href="http://dthevenin.github.com/stylesheets/index.css" media="screen" />
+  <link rel="stylesheet" href="http://dthevenin.github.com/stylesheets/vs.css">
+  <link rel="stylesheet" href="http://dthevenin.github.com/stylesheets/bender.css">
+  <link rel="stylesheet" href="../css/doc.css">
+  <link rel="stylesheet" href="http://dthevenin.github.com/stylesheets/index-responsive.css" media="screen" />
+  <link rel="stylesheet" href="../css/zenburn.css" media="screen" />
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>    
+    <script>
+      function sendDemoMessage (iframe_id, value) {
+        var frame = document.getElementById (iframe_id);
+        theme_window = frame.contentWindow;
+        theme_window.postMessage (value, "*");
+      }
+    </script>
+    
+    <article id="head_intro" style="height: auto;padding-bottom: 10px;">
+      <section>
+        <h2>Transition Animation module</h2><br/><h3>is a set of components and functions that
+        allow the developer to create complexes animations.<br/>
+        This module do not aim to replace CSS Animations or the basic VSToolkit
+        animation module.<br/><br/>
+        Its goal is to proposes:
+        <ul>
+          <li>enough expressivity to allow fine tuning animations
+          <li>to animate any king of component's property (an array, a string, ...)
+          <li>be compatible with ViniSketch PAR and SEQ scheduling
+          <li>be compatible with ViniSketch DataFLow
+          <li>be optimised to run on a mobile devices
+        </ul><br/>
+        This module proposes tree main classes:
+        <ul>
+          <li>Chronometer: is a periodical signal (tick) generator
+          <li>Pace: Implements a function in the range [0,1] to [0,1]. Useful to implement for instance an EaseIn transformation
+          <li>Trajectory: is an component with one input in, and any number of outputs.
+        </ul>
+        <h3>
+      </section>
+    </article>
+
+    <article class="demo hidden-phone">
+      <h1>Disk</h1>
+     
+      <iframe id="demo_disk"src="../examples/ext_fx/disk/index.html"></iframe>
+
+      <br />
+      <p>This demo shows how to use PAR or SEQ to mix animations</p>
+      <br />
+      <br />
+      <p>This demo is based on the Zanimo demo Circles: <a href="http://zanimo.us/">http://zanimo.us/</a></br>
+      Credits @peutetre <a href="https://github.com/peutetre/Zanimo">Zanimo</a><p>
+      <br />
+      <p>Click on following buttons to pause, start or reconfigure the animation.</p>
+      <br />
+      <br />
+      
+      <ul id="demo_theme_selector">
+        <li onclick="sendDemoMessage('demo_disk', 'pause')">Pause</li>
+        <li onclick="sendDemoMessage('demo_disk', 'start')">Start</li>
+        <li onclick="sendDemoMessage('demo_disk', 'seq_anim')">SEQ Animation</li>
+        <li onclick="sendDemoMessage('demo_disk', 'par_anim')">PAR Animation</li>
+      </ul>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <hr />      
+    </article>
+
+    <article class="demo hidden-phone">
+      <h1>Newton's cradle</h1>
+
+      <iframe id="demo_cradle"src="../examples/ext_fx/cradle/index.html"></iframe>
+
+      <br />
+      <p>This simple demo shows a Newton's cradle, with 2 sequential animations,
+      and a pace that simulates the physics.</p>
+      <br />
+      <br />
+      <p>Click on following buttons to pause or start the animation.</p>
+      <br />
+      <br />
+      
+      <ul id="demo_theme_selector">
+        <li onclick="sendDemoMessage('demo_cradle', 'pause')">Pause</li>
+        <li onclick="sendDemoMessage('demo_cradle', 'start')">Start</li>
+      </ul>
+
+      <br />
+      <br />
+      <br />
+      <hr />      
+  
+    </article>
+
+
+    <article class="demo hidden-phone">
+
+      <iframe id="demo_list"src="../examples/ext_fx/ThingsList/index.html"></iframe>
+
+      <h1>Thinglist</h1>
+      <br />
+      <p>This more complex demo simulates the Thinglist application.</p>
+      <br />
+      <p>List items opening and the settings menu are animated.</p>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <hr />      
+    </article>
+
+  <script type="text/javascript">
+    hljs.tabReplace = '      ';
+    hljs.initHighlightingOnLoad();
+  </script>
+</body>
+</html>
