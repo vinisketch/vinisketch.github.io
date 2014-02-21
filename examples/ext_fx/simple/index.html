@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html id="animations" x-hag-ref="animations">
+<html id="simple">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, target-densityDpi=160, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
-    <title>ThingsList</title>
-    <style>
-      ::selection {background: transparent;}
-    </style>
-
+    
     <link rel="stylesheet" type="text/css" href="../../../lib/css/vs_ui.css">
-    <link rel="stylesheet" type="text/css" href="../../../lib/css/vs_ui_pure.css">
-    <link rel="stylesheet" type="text/css" href="List.css">
+    <link rel="stylesheet" type="text/css" href="../../../lib/css/vs_ui_ios.css">
+    <link rel="stylesheet" type="text/css" href="Simple.css">
 
     <script type="text/javascript" src="../../../lib/js/vs_util.js"></script>
     <script type="text/javascript" src="../../../lib/js/vs_core.js"></script>
@@ -19,10 +15,15 @@
     <script type="text/javascript" src="../../../lib/js/vs_fx.js"></script>
     <script type="text/javascript" src="../../../lib/js/vs_ext_fx.js"></script>
 
-    <script type="text/javascript" src="ListItem.js"></script>
-    <script type="text/javascript" src="List.js"></script>
+    <script type="text/javascript" src="Simple.js"></script>
 
   </head>
-  <body class="theme application" x-hag-hole="children" onload="loadApplication ()">
+  <body class="application" x-hag-hole="children" onload="loadApplication ()">
+    <div id="my_view">
+      <div id="sub_view1"></div>
+      <div id="sub_view2"></div>
+      <div id="sub_view3"></div>
+      <div id="sub_view4"></div>
+    </div>
   </body>
 </html>
