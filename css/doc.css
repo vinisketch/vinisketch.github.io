@@ -294,6 +294,19 @@ li {
   outline: none;
 }
 
+#demo_simple_anim {
+  width: 215px;
+  height: 215px;
+  float: right;
+}
+
+#AT_simple_ex {
+  -webkit-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+}
+
 #demo_disk {
   width: 480px;
   height: 480px;
