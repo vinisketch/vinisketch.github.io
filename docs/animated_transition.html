@@ -74,6 +74,29 @@ this.buildDataflow ();
 // start the animation
 chrono.start ();
 </code></pre>      <br />
+      The helper "vs.ext.fx.createTransition" allows to create a full animation
+      with only one call.
+      <hr />
+    </article>
+    
+    <article style="padding-bottom: 10px;">
+      <h1>Attach an animation to a property</h1>
+      <br />
+      This demo show how to instrument a component property.<br/ >
+      On the property change, the value is animated along a trajectory.<br/ ><br/ >
+      Write (or copy) a text into the textarea.
+      On blur event the text is animated.
+      <br />
+      <br />
+      <iframe id="demo_property_anim" src="../examples/ext_fx/StringAnimation/index.html"></iframe>
+<pre><code class="javascript">// options for the animation
+var options = {
+  trajectory: new StringTrajectory ({model:this.mode}).init (),
+  duration: 1000
+};
+
+vs.ext.fx.attachTransition (this.label, "text", options);
+</code></pre>
       <hr />
     </article>
 

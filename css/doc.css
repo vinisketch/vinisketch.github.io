@@ -300,6 +300,11 @@ li {
   float: right;
 }
 
+#demo_property_anim {
+  width: 100%;
+  height: 215px;
+}
+
 #AT_simple_ex {
   -webkit-transform: scale(0.75);
   -ms-transform: scale(0.75);
