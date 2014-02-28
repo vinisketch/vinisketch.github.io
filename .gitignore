@@ -1,3 +1,6 @@
 node_modules
 keys
 RSA_keys
+*.o
+.DS_Store
+build/
