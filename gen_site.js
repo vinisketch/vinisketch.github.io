@@ -13,9 +13,9 @@ var files_to_patch = [
   ["src/introduction.html", "index.html"],
   ["src/first_application.html", "first_application.html"],
   ["src/object_model.html", "object_model.html"],
-  ["src/template.html", "template.html"],
-  ["src/animated_transition.html", "animated_transition.html"],
-  ["src/examples.html", "examples.html"]
+  ["src/template.html", "template.html"]
+  // ["src/animated_transition.html", "animated_transition.html"],
+  // ["src/examples.html", "examples.html"]
 ]
 
 function load_patches (end_load) {
